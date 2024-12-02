@@ -1,29 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-import "./assets/styles/custom.css";
+import { createRoot } from "react-dom/client";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Routes from "./routes";
-import history from "./managers/history";
-import { store } from "./store";
+import { BrowserRouter } from "react-router-dom";
+import "./global.css";
 
-const WebApp = () => {
-  return (
-    <HistoryRouter history={history}>
-      <Provider store={store}>
-        <Routes />
-        <ToastContainer />
-      </Provider>
-    </HistoryRouter>
-  );
-};
+const container = document.getElementById("root");
+const root = createRoot(container);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<WebApp />);
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,74 +1,97 @@
 /** @type {import('tailwindcss').Config} */
-// eslint-disable-next-line no-undef
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./src/modules/**/*.{js,jsx,ts,tsx}",
-    "./src/common/**/*.{js,jsx,ts,tsx}"
-  ],
-  safelist: [],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    // specifying screens is mandatory in every tailwind.config file
-    screens: {
-      xs: "480px", //min-width 480px
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1440px"
-    },
-    fontFamily: {
-      PoppinsRegular: ["Poppins-Regular", "sans-serif"],
-      PoppinsMedium: ["Poppins-Medium", "sans-serif"],
-      PoppinsSemiBold: ["Poppins-SemiBold", "sans-serif"],
-      PoppinsBold: ["Poppins-Bold", "sans-serif"]
-    },
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-      white: "#FFFFFF",
-      black: {
-        10: "#111827"
+    extend: {
+      colors: {
+        whitesmoke: {
+          "100": "#f9f9f9",
+          "200": "#f6f6f7",
+        },
+        darkslateblue: "#204e98",
+        white: "#fff",
+        silver: {
+          "100": "#c1c4c8",
+          "200": "#bdbdbd",
+        },
+        darkgray: "#979ba1",
+        gray: {
+          "100": "#1f1f1f",
+          "200": "#121326",
+          "300": "#0c0d1b",
+        },
+        darkslategray: "#2f303c",
+        cornflowerblue: {
+          "100": "#4d9eea",
+          "200": "#4775bf",
+          "300": "rgba(71, 117, 191, 0.09)",
+        },
+        black: "#000",
+        limegreen: "#58cc46",
+        aliceblue: "#e7f4ff",
       },
-      primary: {
-        10: "#FFDB0A"
+      spacing: {},
+      fontFamily: {
+        "source-sans-pro": "'Source Sans Pro'",
+        inter: "Inter",
       },
-      blue: {
-        10: "#3D61B0"
+      borderRadius: {
+        "12xs": "1px",
+        "8xs": "5px",
+        "3xs": "10px",
+        "10xs": "3px",
+        xl: "20px",
+        "36xl": "55px",
       },
-      grey: {
-        10: "#F6FAFC"
-      },
-      red: {
-        10: "#FF2A29"
-      },
-      navyBlue: {
-        10: "#4F46E5"
-      },
-      darkGrey: {
-        10: "#333333"
-      }
     },
     fontSize: {
-      // `[fontSize, lineHeight]`
-      "ft12-16": ["12px", "16px"],
-      "ft14-20": ["14px", "20px"],
-      "ft16-24": ["16px", "24px"],
-      "ft20-28": ["20px", "28px"],
-      "ft24-32": ["24px", "32px"],
-      "ft30-36": ["30px", "36px"],
-      "ft36-40": ["36px", "40px"],
-      "ft48-16": ["48px", "16px"]
+      sm: "14px",
+      mini: "15px",
+      base: "16px",
+      "3xl": "22px",
+      lg: "18px",
+      "5xl": "24px",
+      xl: "20px",
+      "13xl": "32px",
+      lgi: "19px",
+      "7xl": "26px",
+      "15xl": "34px",
+      "8xl": "27px",
+      smi: "13px",
+      xs: "12px",
+      inherit: "inherit",
     },
-    extend: {
-      //theme options are to be extended with custom variants and not overridden (1 unit = 4px)
-      spacing: {
-        //common for width, height, padding, margin
-        4.5: "18px", //p-4.5 , m-4.5 , w-4.5, h-4.5
-        11.5: "46px", //divide the required value by 4 to get the key name (46/4 = 11.5)
-        "77px": "77px" // Directly use the pixel value if the divided has more than 1 decimal (e.g., 77/4 = 19.25, so use 77px)
-      }
-    }
+    screens: {
+      mq1525: {
+        raw: "screen and (max-width: 1525px)",
+      },
+      mq1225: {
+        raw: "screen and (max-width: 1225px)",
+      },
+      mq1025: {
+        raw: "screen and (max-width: 1025px)",
+      },
+      mq975: {
+        raw: "screen and (max-width: 975px)",
+      },
+      mq950: {
+        raw: "screen and (max-width: 950px)",
+      },
+      mq850: {
+        raw: "screen and (max-width: 850px)",
+      },
+      mq725: {
+        raw: "screen and (max-width: 725px)",
+      },
+      mq700: {
+        raw: "screen and (max-width: 700px)",
+      },
+      mq450: {
+        raw: "screen and (max-width: 450px)",
+      },
+    },
   },
-  plugins: []
+  corePlugins: {
+    preflight: false,
+  },
 };
